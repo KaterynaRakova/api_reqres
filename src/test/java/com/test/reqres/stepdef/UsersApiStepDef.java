@@ -59,7 +59,7 @@ public class UsersApiStepDef {
             Assertions.assertEquals(expectedList.get(i).get(name),userPojo.getData().getFirst_name(),ApiUtils.logFailure(name));
             Assertions.assertEquals(expectedList.get(i).get(lastName),userPojo.getData().getLast_name(),ApiUtils.logFailure(lastName));
             Assertions.assertEquals(expectedList.get(i).get(avatar),userPojo.getData().getAvatar(),ApiUtils.logFailure(avatar));
-            Assertions.assertEquals(ConfigReader.readProperty("supportUrl"),userPojo.getSupport().getUrl(),ApiUtils.logFailure(id));
+            Assertions.assertEquals(ConfigReader.readProperty("supportUrl"),userPojo.getSupport().getUrl(),ApiUtils.logFailure("url"));
         }
     }
 
