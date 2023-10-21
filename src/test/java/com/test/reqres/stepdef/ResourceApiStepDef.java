@@ -19,7 +19,6 @@ import java.util.Map;
 
 public class ResourceApiStepDef {
     private Response response;
-    private List <SingleResource> allResources;
     @Given("Resource endpoint")
     public void get_request_for_resource_endpoint() {
         RestAssured.baseURI=ConfigReader.readProperty("uri");
@@ -36,7 +35,7 @@ public class ResourceApiStepDef {
                     .queryParam("page",i)
                     .when().get()
                     .then().statusCode(code).extract().response();
-           allResources = response.as(ResourceListPojo.class).getData();
+            List<SingleResource> allResources = response.as(ResourceListPojo.class).getData();
           for (SingleResource v : allResources) {
                sum += v.getId();
                avg += v.getYear();
