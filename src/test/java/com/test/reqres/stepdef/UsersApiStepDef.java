@@ -39,7 +39,7 @@ public class UsersApiStepDef {
                     .when().get()
                     .then().statusCode(code).log().body().extract().response();
           Assertions.assertEquals(i,Integer.parseInt(response.jsonPath().getString(page)));
-          expectedList= new ObjectMapper().readValue(new File("/Users/kateryna/Documents/Codefish project/Api_reqres/src/test/java/com/test/reqres/json/UsersPage"+i+".json"), new TypeReference <>() {});
+          expectedList= new ObjectMapper().readValue(new File("/Users/kateryna/Documents/CodeFish project/Api_reqres/src/test/java/com/test/reqres/json/UsersPage"+i+".json"), new TypeReference <>() {});
             List<SingleUser> actualList = response.as(UsersListPojo.class).getData();
           actualList.forEach(n->data.put(n.getFirst_name().concat(".")+n.getLast_name(),n.getEmail()));
           for(int j = 0; j< actualList.size()-1; j++){
@@ -56,7 +56,7 @@ public class UsersApiStepDef {
 
     @Given("Get Single user validate status code {int}, {string},{string},{string},{string} URl")
     public void get_single_user_validate_status_code_u_rl(int code,String name, String lastName, String id, String avatar) throws IOException {
-        expectedList=new ObjectMapper().readValue(new File("/Users/kateryna/Documents/Codefish project/Api_reqres/src/test/java/com/test/reqres/json/AllUserData.json"), new TypeReference<>() {
+        expectedList=new ObjectMapper().readValue(new File("/Users/kateryna/Documents/CodeFish project/Api_reqres/src/test/java/com/test/reqres/json/AllUserData.json"), new TypeReference<>() {
         });
         for (int i=0 ;i < expectedList.size();i++){
             response=RestAssured.given()

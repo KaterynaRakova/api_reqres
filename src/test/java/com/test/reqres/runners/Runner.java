@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "/Users/kateryna/Documents/Codefish project/Api_reqres/src/test/resources/features",
+        features = "/Users/kateryna/Documents/CodeFish project/Api_reqres/src/test/resources/features",
         glue = "com/test/reqres/stepdef",
         dryRun = false,
         tags="@regression",
