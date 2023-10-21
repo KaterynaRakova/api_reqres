@@ -29,7 +29,7 @@ public class ResourceApiStepDef {
         int sum = 0;
         double avg = 0;
         int count=0;
-        for(int i=1;i<3;i++) {
+        for(int i = 1; i<=Integer.parseInt(ConfigReader.readProperty("pages")); i++) {
             response = RestAssured.given()
                     .accept(ContentType.JSON)
                     .queryParam("page",i)
