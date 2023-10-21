@@ -11,12 +11,11 @@ import io.restassured.response.Response;
 import org.junit.jupiter.api.Assertions;
 import utils.ApiUtils;
 import utils.ConfigReader;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.atomic.AtomicReference;
+
 
 public class ResourceApiStepDef {
     private Response response;
