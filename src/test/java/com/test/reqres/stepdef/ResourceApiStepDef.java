@@ -35,8 +35,7 @@ public class ResourceApiStepDef {
                     .queryParam("page",i)
                     .when().get()
                     .then().statusCode(code).extract().response();
-            List<SingleResource> allResources = response.as(ResourceListPojo.class).getData();
-          for (SingleResource v : allResources) {
+          for (SingleResource v : response.as(ResourceListPojo.class).getData()) {
                sum += v.getId();
                avg += v.getYear();
                count++;
