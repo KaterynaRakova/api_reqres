@@ -32,7 +32,7 @@ public class UsersApiStepDef {
     @Then("Get List Users request and validate status code is {int} number of {string}, {string},{string},{string},{string} URls, count matches {string} and store to map,format: key first.lastname and value email")
     public void get_list_users_request_pages_and_validate_status_code_is_u_rls_count_matches_and_store_to_map_format_key_first_lastname_and_value_email(int code,String page,  String firstName, String lastName, String id, String avatar, String total) throws IOException {
         Map<String,Object> data=new HashMap<>();
-        for(int i=1; i<3;i++) {
+        for(int i=1; i<=Integer.parseInt(ConfigReader.readProperty("pages"));i++) {
             response = RestAssured.given()
                     .accept(ContentType.JSON)
                     .queryParam("page", i)
