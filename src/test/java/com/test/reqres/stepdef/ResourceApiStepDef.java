@@ -26,9 +26,8 @@ public class ResourceApiStepDef {
     }
     @Then("Get request and validate status code {int} and sum of ids {int} and avg of years {double}")
     public void validate_status_code_and_sum_of_ids_and_avg_of_years(int code, Integer sumIds, Double avgYears) {
-        int sum = 0;
+        int sum = 0,count=0;
         double avg = 0;
-        int count=0;
         for(int i = 1; i<=Integer.parseInt(ConfigReader.readProperty("pages")); i++) {
             response = RestAssured.given()
                     .accept(ContentType.JSON)
