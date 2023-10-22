@@ -42,7 +42,7 @@ public class ResourceApiStepDef {
     
     @Then("Get request for resource and validate code {int} {string},{string},{string},support text")
     public void get_request_for_resource_and_validate_support_text(int code, String id, String year, String color) throws IOException {
-      List<Map<String,Object>> expectedList=new ObjectMapper().readValue(new File("/Users/kateryna/Documents/CodeFish project/Api_reqres/src/test/java/com/test/reqres/json/AllResourcesData.json"), new TypeReference<>() {});
+      List<Map<String,Object>> expectedList=new ObjectMapper().readValue(new File("src/test/java/com/test/reqres/json/AllResourcesData.json"), new TypeReference<>() {});
           for (int i=0 ;i < expectedList.size();i++){
               response= get.getPathParam(code,String.valueOf(i+1));
           SingleResourcePojo singleResourcePojo=response.as(SingleResourcePojo.class);
