@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         glue = "com/test/reqres/stepdef",
         dryRun = false,
         tags="@regression",
-        plugin= {"json:target/cucumber-reports/cucumber.json"}
+        plugin= {"pretty","json:target/cucumber-reports/cucumber.json"}
 )
 public class Runner {
 }
